@@ -1,8 +1,16 @@
+from fastapi import Form
 from pydantic import BaseModel
 
 class ToDo(BaseModel):
     id: int
     item: str
+
+    @classmethod
+    def as_form(
+        cls, 
+        item: str = Form(...)
+    ):
+        return cls(item=item)
 
     model_config = {
         "json_schema_extra": {
