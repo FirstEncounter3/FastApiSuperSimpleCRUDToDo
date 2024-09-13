@@ -1,8 +1,10 @@
+from typing import Optional
+
 from fastapi import Form
 from pydantic import BaseModel
 
 class ToDo(BaseModel):
-    id: int
+    id: Optional[int] = None
     item: str
 
     @classmethod
