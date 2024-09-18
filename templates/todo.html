@@ -18,6 +18,7 @@
             <p>
                 <strong>Item:</strong> {{ todo.item }}
             </p>
+            <a href="/todo/"><button type="button" class="btn btn-primary my-2">Back</button></a>
         </article>
     {% else %}
         <section class="container-fluid">
@@ -25,7 +26,7 @@
             <br>
             <div class="card">
                 <ul class="list-group list-group-flush">
-                    {% for todo in todos %}
+                    {% for todo in todo_list %}
                         <li class="list-group-item">
                             {{ loop.index }}. <a href="/todo/{{ loop.index }}">{{ todo.item }}</a>
                         </li>
